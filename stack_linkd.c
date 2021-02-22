@@ -1,13 +1,13 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-/* Structure to create a node with data and pointer */
+
 
 struct Node
 {
 int data;
 struct Node *next;
-}*top = NULL; // Initially the list is empty
+}*top = NULL;
 
 void push(int);
 void pop();
@@ -43,11 +43,11 @@ void push(int value)
 {
 struct Node *newNode;
 newNode = (struct Node*)malloc(sizeof(struct Node));
-newNode->data = value; // get value for the node
+newNode->data = value;
 if(top == NULL)
 newNode->next = NULL;
 else
-newNode->next = top; // Make the node as TOP
+newNode->next = top; 
 top = newNode;
 printf("Node is Inserted\n\n");
 }
@@ -59,7 +59,7 @@ else{
 struct Node *temp = top;
 printf("\nPopped Element : %d", temp->data);
 printf("\n");
-top = temp->next; // After popping, make the next node as TOP
+top = temp->next;
 free(temp);
 }}
 
